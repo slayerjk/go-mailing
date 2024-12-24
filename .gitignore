@@ -1,0 +1,7 @@
+# all
+*
+
+# except
+!README.md
+!.gitignore
+!mailing.go
