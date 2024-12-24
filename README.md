@@ -3,7 +3,7 @@ Go - va mailing helper functions for standart "net/smtp" package
 
 Email using builtin "net/smtp" based on appname, message, date and mailing.json(found in "data" dir of program root) file with smtp data.
 
-Mailing json file example to use with package:
+<h3>Mailing json file example to use with package</h3>
 ```
 {
     "host": "my-smtp@example.com",
