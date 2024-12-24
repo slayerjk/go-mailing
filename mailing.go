@@ -18,7 +18,7 @@ type MailData struct {
 	ToAddrErrors  []string `json:"to_addr_errors"`
 	ToAddrReports []string `json:"to_addr_reports"`
 }
-""
+
 // read json mailing data
 func readMailingData(dataFile string) (MailData, error) {
 	var result MailData
