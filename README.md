@@ -1,9 +1,11 @@
 # go-mailing
 Go - va mailing helper functions for standart "net/smtp" package
 
+Only smtp without auth for now!
+
 Email using builtin "net/smtp" package based on appname, message, date and smtp data that could be some json file.
 
-<h3>Mailing json file example to use with package</h3>
+<h3>Mailing json file example</h3>
 
 ```
 {
