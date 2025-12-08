@@ -1,24 +1,28 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+	"strings"
+
+	mailing "github.com/slayerjk/go-mailing"
+)
 
 func main() {
-	fmt.Print("test")
-	/* // mailing example 'report'(read and send log file)
-	report, err := os.ReadFile(logFile.Name())
+	// smtpHost string, smtpPort string, mailFrom string, subject string, mailToList []string, msg []byte
+	mailHost := flag.String("mh", "mail.example.com", "mail host address")
+	mailPort := flag.Int("mp", 25, "mail server port")
+	mailFrom := flag.String("mf", "no-reply@example.com", "mail from address")
+	mailSubject := flag.String("ms", "TEST SUBJECT", "mail subject")
+	mailMsg := flag.String("msg", "TEST MESSAGE", "message text")
+	mailTo := flag.String("mt", "user1@example.com", "mail adresses separated by coma")
+	flag.Parse()
+
+	// forming list of mailTo addresses
+	mailToList := strings.Split(*mailTo, ",")
+
+	err := mailing.SendPlainEmailWoAuth(*mailHost, *mailPort, *mailFrom, *mailSubject, *mailMsg, mailToList)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
-	errM1 := mailing.SendPlainEmailWoAuth("mailing.json", "report", appName, report)
-	if errM1 != nil {
-		log.Printf("failed to send email:\n\t%v", errM1)
-	} */
-
-	/* // mailing example 'error'(just error text)
-	newError := fmt.Errorf("custom error")
-	errM2 := mailing.SendPlainEmailWoAuth("mailing.json", "error", appName, []byte(newError.Error()))
-	if errM2 != nil {
-		log.Printf("failed to send email:\n\t%v", errM2)
-	} */
-
 }
