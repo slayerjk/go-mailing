@@ -10,16 +10,12 @@ func SendTextEmailWoAuth(mailHost string, mailPort int, mailFrom string, mailSub
 ```
 Send plain text mail without auth(typically smtp:25).
 
-Subject will be like "<YOUR SUBJECT> - (<DATE"02.01.2006 15:04">)"
-
 <h2>SendHtmlEmailWoAuth</h2>
 
 ```
 func SendHtmlEmailWoAuth(mailHost string, mailPort int, mailFrom string, mailSubject string, body string, mailToList []string) error
 ```
 Send plain text mail without auth(typically smtp:25).
-
-Subject will be like "<YOUR SUBJECT> - (<DATE"02.01.2006 15:04">)"
 
 <h2>cmd/examples/main.go<h2>
 
