@@ -38,7 +38,7 @@ func main() {
 		fmt.Println("DONE")
 	case "html":
 		// sending html
-		body := fmt.Sprintf("<html><body><h1>%s</h1><img src=\"test-data/test-1.png\" alt=\"your file here\" width=\"250\"></body></html>", *mailMsg)
+		body := fmt.Sprintf("<html><body><h1>%s</h1></body></html>", *mailMsg)
 		err := mailing.SendEmailWoAuth(*mailType, *mailHost, *mailPort, *mailFrom, *mailSubject, body, mailToList, attach)
 		if err != nil {
 			fmt.Println(err)
