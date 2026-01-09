@@ -12,6 +12,20 @@ Send plain text or html mail without auth(typically smtp:25).
 
 Attach files is list of pathes to files. If len == 0, skip it.
 
+<h2>SendReport</h2>
+
+```
+func SendReport(
+	mailHost string, mailPort int, mailFrom string, mailSubject string,
+	filePathToReport string, adminsList []string, attch []string) error
+```
+Just a small func to send plain text file/log to sender's.
+
+Under the hood it uses helper function:
+```
+func formReportFromFile(logPath string) (string, error)
+```
+
 <h2>cmd/examples/main.go<h2>
 
 Testing functions.
